@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 
 const manrope = Manrope({
-  weight: ["500", "700"],
+  weight: ["400", "500", "700"],
   style: ["normal"],
   subsets: ["latin"],
 });

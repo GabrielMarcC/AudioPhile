@@ -17,6 +17,10 @@ const config: Config = {
         "very-light-gray": "#FAFAFA",
         "white-custom": "#FFF",
       },
+      backgroundImage: {
+        "hero-desktop": "url(public/assets/home/desktop/image-hero.jpg)",
+        "header-mobile": "url(public/assets/home/mobile/image-header.jpg)",
+      },
     },
   },
   plugins: [],

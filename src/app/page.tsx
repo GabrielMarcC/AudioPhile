@@ -1,9 +1,9 @@
-import { Menu } from "./components/Menu/menu";
+import { Header } from "./components/Header/header";
 
 export default function Home() {
   return (
     <main>
-      <Menu />
+      <Header />
     </main>
   );
 }
