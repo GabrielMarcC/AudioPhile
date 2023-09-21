@@ -18,8 +18,8 @@ const config: Config = {
         "white-custom": "#FFF",
       },
       backgroundImage: {
-        "hero-desktop": "url(public/assets/home/desktop/image-hero.jpg)",
-        "header-mobile": "url(public/assets/home/mobile/image-header.jpg)",
+        "hero-desktop": "url(/assets/home/desktop/image-hero.jpg)",
+        "header-mobile": "url(/assets/home/mobile/image-header.jpg)",
       },
     },
   },

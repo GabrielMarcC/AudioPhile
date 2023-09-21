@@ -1,15 +1,17 @@
-import { LogoIcon } from "@/app/icons/logo-icon";
+import { LogoIcon } from "@/icons/logo-icon";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 type MenuProps = {
-  opacity?: string;
+  bg?: string;
 };
 
-export const Menu = ({ opacity }: MenuProps) => {
+export const Menu = ({ bg }: MenuProps) => {
   return (
     <div
-      className={`w-full flex-col justify-center bg-opacity-${opacity} bg-black pt-[14px]`}
+      className={`w-full flex-col justify-center pt-[14px] ${
+        bg ? "bg-black" : "bg-inherit"
+      }`}
     >
       <div className="w-full flex justify-between">
         <div className="py-6 px-4 flex items-center">

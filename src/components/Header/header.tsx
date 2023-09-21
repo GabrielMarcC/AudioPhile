@@ -3,8 +3,8 @@ import { Menu } from "../Menu/menu";
 export const Header = () => {
   return (
     <header className="bg-header-mobile bg-cover bg-no-repeat w-full h-[600px] flex flex-col">
-      <Menu opacity="10" />
-      <div className="flex flex-col items-center justify-center absolute top-[201px] w-[80%] left-[30px] min-w-[328px]">
+      <Menu />
+      <div className="flex flex-col items-center justify-center absolute top-[201px] w-[80%] left-[24px] min-w-[328px]">
         <h3 className="uppercase text-center text-base font-[400] text-white-custom opacity-30 leading-normal tracking-[10px]">
           new product
         </h3>
