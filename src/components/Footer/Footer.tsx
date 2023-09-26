@@ -70,7 +70,7 @@ export const Footer = () => {
               <RiTwitterXFill color="#FFFFFF" />
             </Link>
             <Link href="https://instagram.com" target="_blank">
-              <BsInstagram />
+              <BsInstagram color="#FFFFFF" />
             </Link>
           </nav>
         </div>
