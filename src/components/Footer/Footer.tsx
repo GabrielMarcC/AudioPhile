@@ -10,13 +10,13 @@ import Link from "next/link";
 export const Footer = () => {
   return (
     <footer className="mt-14 flex flex-col items-center w-full h-screen">
-      <Card height="h-[350px]">
+      <Card height="h-[300px]">
         <Image
           src="/assets/image-best-gear.jpg"
           alt="best gear"
           width={320}
           height={250}
-          className="rounded-lg"
+          className="rounded-lg md:w-[680px] md:h-[300px]"
         />
       </Card>
       <h2 className="font-bold tracking-[1px] uppercase text-black text-[28px] text-center w-[80%] pt-5">
@@ -31,7 +31,7 @@ export const Footer = () => {
         to meet some of the fantastic people who make Audiophile the best place
         to buy your portable audio equipment.
       </p>
-      <div className="w-full h-[650px] bg-black-custom flex flex-col mt-32 items-center">
+      <div className="w-full min-h-[650px] max-h-full bg-black-custom flex flex-col mt-32 items-center">
         <hr className="w-[101px]   border-[2px] border-dark-orange" />
         <div className="pt-[52px] flex flex-col items-center justify-center">
           <LogoIcon />

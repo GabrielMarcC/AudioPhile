@@ -34,7 +34,8 @@ export const filterGallery = (data: IGallery[], name: string) => {
     throw new Error("Gallery item not found");
   }
 
-  const { category, img_1, img_2, img_3, img_product, no_bg_img } = foundItem;
+  const { category, img_1, img_2, img_3, img_product, no_bg_img, img_tablet } =
+    foundItem;
 
   return {
     category,
@@ -43,6 +44,7 @@ export const filterGallery = (data: IGallery[], name: string) => {
     img_2,
     img_3,
     img_product,
+    img_tablet,
     no_bg_img,
   };
 };

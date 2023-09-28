@@ -11,19 +11,31 @@ export const ZX7Speaker = async ({ data }: { data: IGallery[] }) => {
 
   return (
     <Card height="h-[320px]" position="relative" margin="mt-[47px]">
-      <Image
-        src={filteredImgs.no_bg_img}
-        alt={filteredImgs.name}
-        height={320}
-        width={320}
-        className="rounded-lg"
-      />
-      <div className="absolute top-[5rem] left-[16px] flex flex-col">
+      <div className="w-[320px] h-[320px] custom:hidden">
+        <Image
+          src={filteredImgs.no_bg_img}
+          alt={filteredImgs.name}
+          width={320}
+          height={320}
+          className="rounded-lg"
+        />
+      </div>
+      <div className="tablet:hidden md:w-[680px] h-[320px]">
+        <Image
+          src={filteredImgs.img_tablet}
+          alt={filteredImgs.name}
+          width={680}
+          height={320}
+          className="rounded-lg"
+        />
+      </div>
+      <div className="absolute top-[5rem] md:top-[7rem] left-[16px] md:left-[43px] flex flex-col">
         <Title label="zx7 speakers" textColor="text-black" />
         <SeeProductBtn
           bgcolor="bg-none"
           margin="mt-[32px]"
           textColor="text-black"
+          border="border-black"
         >
           <Link href="/">see product</Link>
         </SeeProductBtn>

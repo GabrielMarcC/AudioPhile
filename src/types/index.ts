@@ -20,5 +20,6 @@ export interface IGallery {
   img_1: string;
   img_2: string;
   img_3: string;
+  img_tablet: string;
   no_bg_img: string;
 }

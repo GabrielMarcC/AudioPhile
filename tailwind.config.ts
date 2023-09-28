@@ -28,6 +28,19 @@ const config: Config = {
         "product-zx7":
           "url(https://res.cloudinary.com/dduiscoif/image/upload/v1695665752/home/mobile/image-speaker-zx7_pinobi_b26a1d_beebdc.jpg)",
       },
+      screens: {
+        sm: "640px",
+        md: "768px",
+        custom: {
+          min: "768px",
+          max: "5000px",
+        },
+        tablet: {
+          max: "768px",
+          min: "0px",
+        },
+        lg: "1024px",
+      },
     },
   },
   plugins: [],

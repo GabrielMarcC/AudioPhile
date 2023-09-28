@@ -1,30 +1,13 @@
 import React from "react";
 
-// type Props = {
-//   children: React.ReactNode;
-//   height?: string;
-//   bgcolor?: string;
-//   margin?: string;
-// };
-
-// export const Card = ({ children, height, bgcolor, margin }: Props) => {
-//   return (
-//     <div
-//       className={`w-[320px] ${height ? height : "h-[200px]"} ${
-//         bgcolor ? bgcolor : "bg-white"
-//       }  ${margin ? margin : "m-0"} rounded-lg`}
-//     >
-//       {children}
-//     </div>
-//   );
-// };
-
 type Props = {
   children: React.ReactNode;
   height?: string;
   bgcolor?: string;
   margin?: string;
   position?: string;
+  width?: string;
+  display?: string;
 };
 
 export const Card = ({
@@ -33,6 +16,8 @@ export const Card = ({
   bgcolor,
   margin,
   position,
+  width,
+  display,
 }: Props) => {
   const defaultStyle = `flex  flex-col w-[320px] ${
     height ? height : "h-[200px]"
@@ -40,5 +25,9 @@ export const Card = ({
     position ? position : null
   } rounded-lg`;
 
-  return <div className={`${defaultStyle}`}>{children}</div>;
+  const tabletStyle = `custom:${display ? display : "flex"} md:${
+    width ? width : "w-[680px]"
+  } md:h-[320px]`;
+
+  return <div className={`${defaultStyle} ${tabletStyle}`}>{children}</div>;
 };

@@ -4,7 +4,7 @@ import { Menu } from "../Menu/menu";
 
 export const Header = () => {
   return (
-    <header className="bg-hero-mobile md:bg-hero-tablet md:bg-cover md:h-[960px] bg-no-repeat w-full h-[600px] flex flex-col">
+    <header className="bg-hero-mobile bg-cover md:bg-hero-tablet md:bg-cover md:h-[960px] bg-no-repeat w-full h-[600px] flex flex-col">
       <Menu />
       <div className="w-full h-full md:w-[76%] md:m-auto flex flex-col justify-center items-center">
         <h3 className="uppercase text-center text-base font-[400] text-white-custom opacity-30 leading-normal tracking-[10px]">
