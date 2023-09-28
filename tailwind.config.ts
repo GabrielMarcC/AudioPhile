@@ -21,6 +21,8 @@ const config: Config = {
       backgroundImage: {
         "hero-desktop":
           "url(https://res.cloudinary.com/dduiscoif/image/upload/v1695563078/home/desktop/image-hero_b17lli.jpg)",
+        "hero-tablet":
+          "url(https://res.cloudinary.com/dduiscoif/image/upload/v1695869004/home/tablet/image-header_xnrydf.jpg)",
         "hero-mobile":
           "url(https://res.cloudinary.com/dduiscoif/image/upload/v1695563159/home/mobile/image-header_vv9pyk.jpg)",
         "product-zx7":

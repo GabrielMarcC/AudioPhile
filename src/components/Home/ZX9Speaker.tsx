@@ -1,8 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SeeProductBtn } from "./ui/SeeProductBtn";
+import { IGallery } from "@/types";
+import { filterGallery } from "@/utils/filterGallery";
 
-export const ZX9Speaker = async () => {
+export const ZX9Speaker = async ({ data }: { data: IGallery[] }) => {
+  const filteredImgs = filterGallery(data, "zx9");
+
   return (
     <div>
       <div className="w-[327px] h-[600px] rounded-lg bg-dark-orange flex  flex-col relative">
@@ -10,8 +14,8 @@ export const ZX9Speaker = async () => {
           <div className="w-[279px] h-[279px] rounded-[279px] border border-white border-opacity-40">
             <div className="flex items-center justify-center w-[270px] h-[300px] z-10">
               <Image
-                src="https://res.cloudinary.com/dduiscoif/image/upload/v1695564489/home/image-category-thumbnail-speakers_qe3jj0.png"
-                alt="teste"
+                src={filteredImgs.no_bg_img}
+                alt={filteredImgs.name}
                 height={300}
                 width={300}
               />
@@ -20,11 +24,11 @@ export const ZX9Speaker = async () => {
         </div>
         <div className="flex flex-col w-full  justify-center items-center z-20 absolute top-[18.25rem]">
           <h2 className="flex w-[80%] text-[40px] font-bold leading-[40px] tracking-[1.286px] uppercase text-center text-white">
-            zx9 speaker
+            {filteredImgs.name} speakers
           </h2>
-          <p className="text-white text-[15px] font-medium leading-6 opacity-75 pt-6 text-center">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-            obcaec
+          <p className="text-white text-[15px] font-medium leading-6 opacity-75 p-6 text-center">
+            Upgrade to premium speakers that are phenomenally built to deliver
+            truly remarkable sound.
           </p>
           <div
             role="button"

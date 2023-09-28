@@ -7,7 +7,7 @@ type Props = {
   category: string;
 };
 
-export const Categorys = async ({ imgUrl, category }: Props) => {
+export const Categorys = ({ imgUrl, category }: Props) => {
   return (
     <div className="flex flex-col pt-16 items-center">
       <div className="flex flex-col w-[327px] h-[165px] items-center justify-center  bg-light-gray rounded-lg relative">

@@ -12,3 +12,13 @@ export interface ImagesProduct {
   category: string;
   img: string;
 }
+
+export interface IGallery {
+  category: string;
+  img_product: string;
+  name: string;
+  img_1: string;
+  img_2: string;
+  img_3: string;
+  no_bg_img: string;
+}

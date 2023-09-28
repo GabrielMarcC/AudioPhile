@@ -24,12 +24,21 @@ type Props = {
   height?: string;
   bgcolor?: string;
   margin?: string;
+  position?: string;
 };
 
-export const Card = ({ children, height, bgcolor, margin }: Props) => {
+export const Card = ({
+  children,
+  height,
+  bgcolor,
+  margin,
+  position,
+}: Props) => {
   const defaultStyle = `flex  flex-col w-[320px] ${
     height ? height : "h-[200px]"
-  } ${bgcolor ? bgcolor : "bg-white"}  ${margin ? margin : "m-0"} rounded-lg`;
+  } ${bgcolor ? bgcolor : "bg-white"}  ${margin ? margin : "m-0"} ${
+    position ? position : null
+  } rounded-lg`;
 
   return <div className={`${defaultStyle}`}>{children}</div>;
 };

@@ -32,7 +32,7 @@ export const Footer = () => {
         to buy your portable audio equipment.
       </p>
       <div className="w-full h-[650px] bg-black-custom flex flex-col mt-32 items-center">
-        <div className="w-[101px] h-[4px] bg-dark-orange"></div>
+        <hr className="w-[101px]   border-[2px] border-dark-orange" />
         <div className="pt-[52px] flex flex-col items-center justify-center">
           <LogoIcon />
           <nav className="w-full text-white flex flex-col items-center justify-center pt-[48px] uppercase tracking-[2px] text-[13px] leading-6">

@@ -2,13 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { SeeProductBtn } from "./ui/SeeProductBtn";
 import { Title } from "./ui/Title";
+import { IGallery } from "@/types";
+import { filterGallery } from "@/utils/filterGallery";
+import { Card } from "./ui/Card";
 
-export const ZX7Speaker = async () => {
+export const ZX7Speaker = async ({ data }: { data: IGallery[] }) => {
+  const filteredImgs = filterGallery(data, "zx7");
+
   return (
-    <div className="w-[327px] h-[320px] mt-[47px] relative">
+    <Card height="h-[320px]" position="relative" margin="mt-[47px]">
       <Image
-        src="https://res.cloudinary.com/dduiscoif/image/upload/v1695665560/home/mobile/image-speaker-zx7_pinobi.jpg"
-        alt="ss"
+        src={filteredImgs.no_bg_img}
+        alt={filteredImgs.name}
         height={320}
         width={320}
         className="rounded-lg"
@@ -23,6 +28,6 @@ export const ZX7Speaker = async () => {
           <Link href="/">see product</Link>
         </SeeProductBtn>
       </div>
-    </div>
+    </Card>
   );
 };
