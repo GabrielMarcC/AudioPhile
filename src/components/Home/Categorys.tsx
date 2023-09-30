@@ -9,8 +9,8 @@ type Props = {
 
 export const Categorys = ({ imgUrl, category }: Props) => {
   return (
-    <div className="flex flex-col pt-16 items-center">
-      <div className="flex flex-col w-[327px] h-[165px] items-center justify-center  bg-light-gray rounded-lg relative">
+    <div className="flex flex-col pt-16 md:pt-0 items-center">
+      <div className="flex flex-col w-[327px] md:w-[240px] h-[165px] items-center justify-center  bg-light-gray rounded-lg relative">
         <div className={`flex items-start justify-center`}>
           <Image
             src={imgUrl}

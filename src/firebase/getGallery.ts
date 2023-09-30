@@ -1,10 +1,8 @@
-import firebase_app from "@/services/config";
+import { db } from "@/services/firebase";
 import { IGallery } from "@/types";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 export async function getGallery() {
-  const app = firebase_app;
-  const db = getFirestore(app);
   const collectionDb = await getDocs(collection(db, "gallery"));
 
   const querySnapshot = collectionDb;

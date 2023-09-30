@@ -1,10 +1,8 @@
-import firebase_app from "@/services/config";
+import { db } from "@/services/firebase";
 import { ImagesProduct } from "@/types";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 export async function getImages() {
-  const app = firebase_app;
-  const db = getFirestore(app);
   const collectionDb = await getDocs(collection(db, "img_home"));
 
   const querySnapshot = collectionDb;
@@ -14,5 +12,6 @@ export async function getImages() {
     const data = doc.data() as ImagesProduct;
     imagesList.push(data);
   });
+
   return imagesList;
 }

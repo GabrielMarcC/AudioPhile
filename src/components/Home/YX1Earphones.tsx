@@ -11,14 +11,14 @@ export const YX1Earphones = async ({ data }: { data: IGallery[] }) => {
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center mt-6">
-      <div className="flex flex-col md:flex-row md:gap-[4.75rem]">
+      <div className="flex flex-col md:flex-row md:gap-[2.75rem]">
         <Card margin="mt-[30px]" width="w-[340px]" height="w-[280px]">
           <Image
             src={filteredImgs.no_bg_img}
             alt={filteredImgs.name}
             width={320}
-            height={320}
-            className="rounded-lg"
+            height={100}
+            className="rounded-lg md:h-[100%]"
           />
         </Card>
         <Card

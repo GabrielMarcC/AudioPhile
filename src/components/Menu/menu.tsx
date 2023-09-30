@@ -14,7 +14,7 @@ export const Menu = ({ bg }: MenuProps) => {
       }`}
     >
       <div className="w-full flex justify-between md:justify-start items-center">
-        <div className="py-6 px-4 flex items-center w-[72%] justify-center md:w-[40%]">
+        <div className="py-6 px-4 flex items-center w-[72%] justify-center md:w-[60%]">
           <div className="w-[50%] md:w-auto md:pr-3 flex">
             <GiHamburgerMenu color="#ffffff" size="20px" />
           </div>
