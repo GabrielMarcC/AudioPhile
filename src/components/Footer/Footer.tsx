@@ -19,7 +19,7 @@ export const Footer = () => {
           className="rounded-lg md:w-[680px] md:h-[340px]"
         />
       </Card>
-      <h2 className="font-bold tracking-[1px] uppercase text-black text-[28px] text-center w-[80%] pt-5 md:pt-24">
+      <h2 className="font-bold tracking-[1px] uppercase text-black text-[28px] text-center w-[80%] mt-20 md:pt-24">
         bringing you the <span className="text-dark-orange">best</span> audio
         gear
       </h2>

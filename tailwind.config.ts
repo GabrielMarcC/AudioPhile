@@ -31,6 +31,7 @@ const config: Config = {
       screens: {
         sm: "640px",
         md: "768px",
+        lg: "1024px",
         custom: {
           min: "768px",
           max: "5000px",
@@ -39,7 +40,12 @@ const config: Config = {
           max: "768px",
           min: "0px",
         },
-        lg: "1024px",
+        desktop: {
+          max: "1024px",
+        },
+        desktopxl: {
+          min: "1450px",
+        },
       },
     },
   },
