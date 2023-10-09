@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { SeeProductBtn } from "./ui/SeeProductBtn";
 import { IGallery } from "@/types";
-import { filterGallery } from "@/utils/filterGallery";
+import { filterGallery } from "@/firebase/filterGallery";
 
 export const ZX9Speaker = async ({ data }: { data: IGallery[] }) => {
-  const filteredImgs = filterGallery(data, "zx9");
+  const filteredImgs = await filterGallery(data, "zx9");
 
   return (
     <div className="w-[327px] h-[600px] md:w-[680px] md:h-[720px] lg:w-[1110px] lg:h-[560px] rounded-lg bg-dark-orange flex  flex-col md:items-center relative">

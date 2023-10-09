@@ -4,10 +4,10 @@ import { Title } from "./ui/Title";
 import { SeeProductBtn } from "./ui/SeeProductBtn";
 import Link from "next/link";
 import { IGallery } from "@/types";
-import { filterGallery } from "@/utils/filterGallery";
+import { filterGallery } from "@/firebase/filterGallery";
 
 export const YX1Earphones = async ({ data }: { data: IGallery[] }) => {
-  const filteredImgs = filterGallery(data, "yx1");
+  const filteredImgs = await filterGallery(data, "yx1");
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center mt-6">

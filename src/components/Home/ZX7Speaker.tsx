@@ -3,11 +3,11 @@ import Link from "next/link";
 import { SeeProductBtn } from "./ui/SeeProductBtn";
 import { Title } from "./ui/Title";
 import { IGallery } from "@/types";
-import { filterGallery } from "@/utils/filterGallery";
+import { filterGallery } from "@/firebase/filterGallery";
 import { Card } from "./ui/Card";
 
 export const ZX7Speaker = async ({ data }: { data: IGallery[] }) => {
-  const filteredImgs = filterGallery(data, "zx7");
+  const filteredImgs = await filterGallery(data, "zx7");
 
   return (
     <Card height="h-[320px]" position="relative" margin="mt-[47px]">
