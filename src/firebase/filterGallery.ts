@@ -2,8 +2,8 @@ import { IGallery } from "@/types";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "@/services/firebase";
 
-export const filterGallery = async (data: IGallery[], name: string) => {
-  if (!data && !name) {
+export const filterGallery = async (name: string) => {
+  if (!name) {
     throw new Error("Failed to filter gallery");
   }
 

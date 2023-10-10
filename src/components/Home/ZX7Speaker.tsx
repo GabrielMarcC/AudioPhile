@@ -6,8 +6,8 @@ import { IGallery } from "@/types";
 import { filterGallery } from "@/firebase/filterGallery";
 import { Card } from "./ui/Card";
 
-export const ZX7Speaker = async ({ data }: { data: IGallery[] }) => {
-  const filteredImgs = await filterGallery(data, "zx7");
+export const ZX7Speaker = async () => {
+  const filteredImgs = await filterGallery("zx7");
 
   return (
     <Card height="h-[320px]" position="relative" margin="mt-[47px]">

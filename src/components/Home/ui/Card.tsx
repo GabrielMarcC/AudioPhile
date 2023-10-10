@@ -29,5 +29,11 @@ export const Card = ({
     width ? width : "w-[680px]"
   } md:h-[320px]`;
 
-  return <div className={`${defaultStyle} ${tabletStyle}`}>{children}</div>;
+  const desktopStyle = `lg:${width ? width : "w-[350px]"}`;
+
+  return (
+    <div className={`${defaultStyle} ${tabletStyle} ${desktopStyle}`}>
+      {children}
+    </div>
+  );
 };

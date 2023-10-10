@@ -3,11 +3,10 @@ import { Card } from "./ui/Card";
 import { Title } from "./ui/Title";
 import { SeeProductBtn } from "./ui/SeeProductBtn";
 import Link from "next/link";
-import { IGallery } from "@/types";
 import { filterGallery } from "@/firebase/filterGallery";
 
-export const YX1Earphones = async ({ data }: { data: IGallery[] }) => {
-  const filteredImgs = await filterGallery(data, "yx1");
+export const YX1Earphones = async () => {
+  const filteredImgs = await filterGallery("yx1");
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center mt-6">

@@ -2,11 +2,9 @@ import { Header } from "../components/Header/Header";
 import { getImages } from "@/firebase/getImages";
 import { Categorys } from "@/components/Home/Categorys";
 import { Details } from "@/components/Home/Details";
-import { getGallery } from "@/firebase/getGallery";
 
 export default async function Home() {
   const db = await getImages();
-  const data = await getGallery();
   return (
     <main>
       <Header />
@@ -15,7 +13,7 @@ export default async function Home() {
           <Categorys imgUrl={item.img} category={item.category} key={index} />
         ))}
       </section>
-      <Details data={data} />
+      <Details />
     </main>
   );
 }
