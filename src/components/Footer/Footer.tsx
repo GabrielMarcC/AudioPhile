@@ -9,18 +9,18 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer className="mt-14 flex flex-col items-center w-full h-screen">
-      <div className="w-full lg:w-[1110px] flex flex-col items-center justify-center lg:flex-row-reverse lg:gap-72">
-        <Card height="h-[300px]">
+    <footer className="mt-36 flex flex-col items-center w-full h-screen">
+      <div className="w-full lg:w-[1110px] lg:pb-24 flex flex-col items-center justify-center lg:flex-row-reverse lg:gap-72">
+        <Card height="h-[340px]">
           <Image
             src="/assets/image-best-gear.jpg"
             alt="best gear"
             width={320}
             height={250}
-            className="rounded-lg md:w-[680px] md:h-[340px] lg:w-[400px] lg:h-[400px]"
+            className="rounded-lg md:w-[680px] md:h-[340px] lg:w-[400px] lg:h-[600px]"
           />
         </Card>
-        <aside className="lg:w-[444px] lg:h-[444px] flex flex-col justify-center items-center">
+        <aside className="lg:w-[1000px] lg:h-auto flex flex-col justify-center items-center">
           <h2 className="lg:mt-0 lg:pt-16 font-bold tracking-[1px] uppercase text-black text-[28px] text-center w-[80%] mt-20 md:pt-24 lg:text-[40px] lg:tracking-[1.42px] lg:text-left lg:w-full">
             bringing you the <span className="text-dark-orange">best</span>
             audio gear

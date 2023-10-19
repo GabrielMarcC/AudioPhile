@@ -2,30 +2,40 @@ import Image from "next/image";
 import Link from "next/link";
 import { SeeProductBtn } from "./ui/SeeProductBtn";
 import { Title } from "./ui/Title";
-import { IGallery } from "@/types";
-import { filterGallery } from "@/firebase/filterGallery";
 import { Card } from "./ui/Card";
 
-export const ZX7Speaker = async () => {
-  const filteredImgs = await filterGallery("zx7");
+type Props = {
+  product: Products;
+  gallery: Gallery;
+};
 
+export const ZX7Speaker = async ({ product, gallery }: Props) => {
   return (
     <Card height="h-[320px]" position="relative" margin="mt-[47px]">
       <div className="w-[320px] h-[320px] custom:hidden">
         <Image
-          src={filteredImgs.no_bg_img}
-          alt={filteredImgs.name}
+          src={gallery.img_3}
+          alt={product.name}
           width={320}
           height={320}
           className="rounded-lg"
         />
       </div>
-      <div className="tablet:hidden md:w-[680px] h-[320px]">
+      <div className="md:w-[680px] md:h-[320px] lg:hidden mobile:hidden">
         <Image
-          src={filteredImgs.img_tablet}
-          alt={filteredImgs.name}
+          src={gallery.img_tablet}
+          alt={product.name}
           width={680}
           height={320}
+          className="rounded-lg"
+        />
+      </div>
+      <div className="desktop:w-[1110px] desktop:h-[320px] tablet:hidden mobile:hidden">
+        <Image
+          src={gallery.img_desktop}
+          alt={product.name}
+          width={1110}
+          height={600}
           className="rounded-lg"
         />
       </div>

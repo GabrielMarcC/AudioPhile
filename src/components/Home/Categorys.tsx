@@ -2,12 +2,12 @@ import { ArrowIcon } from "@/icons/arrow-icon";
 import Image from "next/image";
 import Link from "next/link";
 
-type Props = {
-  imgUrl: string;
-  category: string;
-};
+type CategoryProps = {
+    imgUrl: string,
+    category: string
+}
 
-export const Categorys = ({ imgUrl, category }: Props) => {
+export const Categorys = ({imgUrl, category}: CategoryProps) => {
   return (
     <div className="flex flex-col pt-16 md:pt-0 items-center">
       <div className="flex flex-col w-[327px] lg:w-[350px]  md:w-[240px] h-[165px] items-center justify-center  bg-light-gray rounded-lg relative">

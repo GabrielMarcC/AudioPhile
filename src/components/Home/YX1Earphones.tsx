@@ -3,34 +3,33 @@ import { Card } from "./ui/Card";
 import { Title } from "./ui/Title";
 import { SeeProductBtn } from "./ui/SeeProductBtn";
 import Link from "next/link";
-import { filterGallery } from "@/firebase/filterGallery";
 
-export const YX1Earphones = async () => {
-  const filteredImgs = await filterGallery("yx1");
+type Props = {
+  product: Products;
+  gallery: Gallery;
+};
 
+export const YX1Earphones = async ({ product, gallery }: Props) => {
   return (
     <div className="w-full h-full flex flex-col items-center justify-center mt-6">
-      <div className="flex flex-col md:flex-row md:gap-[2.75rem]">
-        <Card margin="mt-[30px]" width="w-[340px]" height="w-[280px]">
+      <div className="flex flex-col md:flex-row md:gap-[2.75rem] w-full justify-center items-center">
+        <Card margin="mt-[30px]" width="w-[540px]" height="w-[280px]">
           <Image
-            src={filteredImgs.no_bg_img}
-            alt={filteredImgs.name}
+            src={gallery.img_2}
+            alt={product.name}
             width={320}
             height={100}
-            className="rounded-lg md:h-[100%]"
+            className="rounded-lg md:h-[100%] lg:w-[540px] lg:h-[320px]"
           />
         </Card>
         <Card
           bgcolor="bg-light-gray"
           margin="mt-[24px]"
-          width="w-[340px]"
+          width="w-[540px]"
           height="h-[280px]"
         >
           <div className=" flex flex-col w-full h-full justify-center items-start pl-[25px]">
-            <Title
-              label={`${filteredImgs.name + " earphones"}`}
-              textColor="text-black"
-            />
+            <Title label={`${product.name}`} textColor="text-black" />
             <SeeProductBtn
               bgcolor="bg-none"
               textColor="text-black"

@@ -27,6 +27,7 @@ const config: Config = {
           "url(https://res.cloudinary.com/dduiscoif/image/upload/v1695563159/home/mobile/image-header_vv9pyk.jpg)",
         "product-zx7":
           "url(https://res.cloudinary.com/dduiscoif/image/upload/v1695665752/home/mobile/image-speaker-zx7_pinobi_b26a1d_beebdc.jpg)",
+        "bg-zx9": "url(/assets/featured-section-bg.png)",
       },
       screens: {
         sm: "640px",
@@ -36,12 +37,17 @@ const config: Config = {
           min: "768px",
           max: "5000px",
         },
+        mobile: {
+          min: "0",
+          max: "767px",
+        },
         tablet: {
-          max: "768px",
-          min: "0px",
+          max: "1023px",
+          min: "768px",
         },
         desktop: {
-          max: "1024px",
+          min: "1024px",
+          max: "1980px",
         },
         desktopxl: {
           min: "1450px",
