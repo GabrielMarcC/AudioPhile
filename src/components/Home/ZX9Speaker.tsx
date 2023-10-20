@@ -35,7 +35,7 @@ export const ZX9Speaker = async ({ product, gallery }: Props) => {
             role="button"
             className="w-[160px] h-[48px] bg-black flex items-center justify-center mt-[39px] hover:bg-medium-gray"
           >
-            <SeeProductBtn>
+            <SeeProductBtn hover="lg:hover:bg-[#4C4C4C]">
               <Link href="/">see product</Link>
             </SeeProductBtn>
           </div>

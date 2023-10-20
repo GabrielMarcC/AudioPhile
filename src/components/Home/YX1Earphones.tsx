@@ -35,6 +35,7 @@ export const YX1Earphones = async ({ product, gallery }: Props) => {
               textColor="text-black"
               margin="mt-[32px]"
               border="border-black"
+              hover="lg:hover:bg-black lg:hover:text-white"
             >
               <Link href="/">see product</Link>
             </SeeProductBtn>

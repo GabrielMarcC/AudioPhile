@@ -28,7 +28,7 @@ export const Categorys = ({imgUrl, category}: CategoryProps) => {
           <div className="flex items-center justify-center p-2">
             <button>
               <Link
-                href="/teste"
+                href={`/categorys/${category}`}
                 className="uppercase text-[13px] opacity-50 tracking-[1px] font-bold hover:text-dark-orange"
               >
                 shop

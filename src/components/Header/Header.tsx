@@ -19,7 +19,7 @@ export const Header = () => {
             made for the passionate music enthusiast.
           </p>
         </div>
-        <SeeProductBtn bgcolor="bg-dark-orange" margin="mt-[20px]">
+        <SeeProductBtn bgcolor="bg-dark-orange" margin="mt-[20px]" hover="lg:hover:bg-[#FBAF85]">
           <Link href="/">see product</Link>
         </SeeProductBtn>
       </div>

@@ -4,6 +4,7 @@ type Props = {
   margin?: string;
   textColor?: string;
   border?: string;
+  hover?: string;
 };
 
 export const SeeProductBtn = ({
@@ -12,6 +13,7 @@ export const SeeProductBtn = ({
   margin,
   textColor,
   border,
+  hover,
 }: Props) => {
   const defaultStyle = `w-[160px] h-[48px] cursor-pointer ${
     border ? border : "border-none"
@@ -25,8 +27,13 @@ export const SeeProductBtn = ({
     border ? border : "border-none"
   } border`;
 
+  const desktopStyle = `${hover}`;
+
   return (
-    <div className={`${defaultStyle} ${tabletStyle}`} role="button">
+    <div
+      className={`${defaultStyle} ${tabletStyle} ${desktopStyle}`}
+      role="button"
+    >
       {children}
     </div>
   );

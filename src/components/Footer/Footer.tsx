@@ -7,6 +7,8 @@ import { RiTwitterXFill } from "react-icons/ri";
 import { BsInstagram } from "react-icons/bs";
 import Link from "next/link";
 
+const changeColor = "";
+
 export const Footer = () => {
   return (
     <footer className="mt-36 flex flex-col items-center w-full h-screen">
@@ -86,11 +88,18 @@ export const Footer = () => {
               </p>
             </aside>
             <nav className="w-full flex  items-center justify-center md:justify-end  md:p-0 md:pr-[40px] h-full gap-4 p-9">
-              <Link href="https://www.facebook.com/" target="_blank">
+              <Link
+                href="https://www.facebook.com/"
+                target="_blank"
+              >
                 <GrFacebook color="#FFFFFF" size="30" />
               </Link>
-              <Link href="https://twitter.com" target="_blank">
-                <RiTwitterXFill color="#FFFFFF" size="30" />
+              <Link
+                href="https://twitter.com"
+                target="_blank"
+                className="lg:hover:fill-dark-orange"
+              >
+                <RiTwitterXFill size="30" color="#FFFFFF"/>
               </Link>
               <Link href="https://instagram.com" target="_blank">
                 <BsInstagram color="#FFFFFF" size="30" />

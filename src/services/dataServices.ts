@@ -2,7 +2,7 @@ import { supabase } from "@/supabase";
 
 export const dataServices = () => {
   const getGallery = async (): Promise<Gallery[]> => {
-    let { data } = await supabase.from("gallery").select("*");
+    const { data } = await supabase.from("gallery").select("*");
     const gallery = data as Gallery[];
 
     return gallery;

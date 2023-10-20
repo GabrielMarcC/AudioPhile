@@ -46,6 +46,7 @@ export const ZX7Speaker = async ({ product, gallery }: Props) => {
           margin="mt-[32px]"
           textColor="text-black"
           border="border-black"
+          hover="lg:hover:bg-black lg:hover:text-white"
         >
           <Link href="/">see product</Link>
         </SeeProductBtn>
