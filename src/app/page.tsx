@@ -1,24 +1,14 @@
 export const revalidate = 0;
-import { Categorys } from "@/components/Home/Categorys";
+import { CategorysLinks } from "@/components/CategorysLinks/CategorysLinks";
 import { Header } from "../components/Header/Header";
 import { Details } from "@/components/Home/Details";
-import { filters } from "@/utils/filters";
 
 export default async function Home() {
-  const { filterGalleryByIds } = filters();
-  const gallery = await filterGalleryByIds([1, 4, 6]);
-
   return (
     <div>
       <Header />
-      <section className="mb-[120px] md:mt-[120px] flex flex-col md:flex-row md:justify-center md:gap-2 lg:gap-8 ">
-        {gallery.map((imgs) => (
-          <Categorys
-            key={imgs.id}
-            category={imgs.category}
-            imgUrl={imgs.img_home}
-          />
-        ))}
+      <section className="pb-[120px] md:pt-[120px] flex flex-col md:flex-row md:gap-3 justify-center items-center  lg:gap-[30px]">
+        <CategorysLinks />
       </section>
       <Details />
     </div>
