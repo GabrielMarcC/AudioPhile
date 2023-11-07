@@ -44,28 +44,28 @@ export const Footer = () => {
             <div className="w-full h-full flex justify-center items-center md:justify-start lg:w-auto">
               <LogoIcon />
             </div>
-            <nav className="w-full text-white flex flex-col md:items-start items-center  justify-center pt-[48px] uppercase tracking-[2px] text-[13px] leading-6 lg:flex-row lg:pt-0 lg:w-auto">
+            <nav className="w-full text-white flex flex-col md:items-start items-center  justify-center pt-[48px] uppercase tracking-[2px] text-[13px] leading-6 lg:flex-row lg:pt-0 lg:w-auto ">
               <Link
                 href="/"
-                className="link link-hover hover:text-dark-orange  p-2"
+                className="link link-hover hover:text-dark-orange hover:no-underline  p-2 "
               >
                 home
               </Link>
               <Link
                 href="/categories/headphones"
-                className="link link-hover hover:text-dark-orange p-2"
+                className="link link-hover hover:text-dark-orange hover:no-underline  p-2"
               >
                 headphones
               </Link>
               <Link
                 href="/categories/speakers"
-                className="link link-hover hover:text-dark-orange p-2"
+                className="link link-hover hover:text-dark-orange hover:no-underline  p-2"
               >
                 speakers
               </Link>
               <Link
                 href="/categories/earphones"
-                className="link link-hover hover:text-dark-orange p-2"
+                className="link link-hover hover:text-dark-orange hover:no-underline  p-2"
               >
                 earphones
               </Link>
