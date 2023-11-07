@@ -9,12 +9,18 @@ type Props = {
 };
 
 export const Products = ({ data, dataImg }: Props) => {
-  const changeOrder = [...data].reverse();
+  const changeOrder = [...data].sort(function (a, b) {
+    return a.id - b.id;
+  });
 
   return (
     <div className="flex flex-col justify-center items-center">
       {changeOrder.map((products, index) => {
-        const reversedIndex = data.length - 1 - index;
+        const verifiedCategory = products.category === "speakers";
+        const changeOrder = verifiedCategory
+          ? dataImg.slice().reverse()
+          : dataImg;
+
         return (
           <div
             key={products.id}
@@ -24,7 +30,7 @@ export const Products = ({ data, dataImg }: Props) => {
           >
             <div className="flex justify-center items-center md:w-[690px] md:h-[350px] lg:w-[540px] lg:h-[560px] rounded-lg bg-light-gray">
               <Image
-                src={dataImg[reversedIndex].img_product}
+                src={changeOrder[index].img_product}
                 alt={products.name}
                 width={300}
                 height={300}
@@ -49,7 +55,7 @@ export const Products = ({ data, dataImg }: Props) => {
                 bgcolor="bg-dark-orange"
                 hover="hover:lg:bg-light-orange"
               >
-                <Link href="/">see product</Link>
+                <Link href={`/details/${products.id}`}>see product</Link>
               </SeeProductBtn>
             </div>
           </div>

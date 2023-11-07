@@ -27,7 +27,7 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "daisyui": "^3.7.6",
+    "daisyui": "^3.9.4",
     "supabase": "^1.100.1"
   }
 }

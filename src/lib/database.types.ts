@@ -11,19 +11,19 @@ export interface Database {
     Tables: {
       gallery: {
         Row: {
-          id: number;
+          id_product: number;
           img_1: string;
           img_2: string;
           img_3: string;
           img_home: string;
           img_product: string;
           img_tablet: string;
-          img_desktop:string;
+          img_desktop: string;
           name: string;
           category: string;
         };
         Insert: {
-          id?: number;
+          id_product?: number;
           img_1?: string;
           img_2?: string;
           img_3?: string;
@@ -32,10 +32,10 @@ export interface Database {
           name?: string;
           category?: string;
           img_tablet?: string;
-          img_desktop:string;
+          img_desktop: string;
         };
         Update: {
-          id?: number;
+          id_product?: number;
           img_1?: string;
           img_2?: string;
           img_3?: string;
@@ -44,20 +44,27 @@ export interface Database {
           name?: string;
           category?: string;
           img_tablet?: string;
-          img_desktop:string;
+          img_desktop: string;
         };
-        Relationships: [];
+        Relationships: [
+          {
+            foreignKeyName: "gallery_id_product_fkey";
+            columns: ["id_product"];
+            referencedRelation: "products";
+            referencedColumns: ["id"];
+          }
+        ];
       };
       products: {
         Row: {
-          category: string 
-          description: string 
-          features: string 
+          category: string;
+          description: string;
+          features: string;
           id: number;
-          includes: Json 
-          name: string 
-          new: boolean 
-          price: number 
+          includes: Json;
+          name: string;
+          new: boolean;
+          price: number;
         };
         Insert: {
           category?: string | null;

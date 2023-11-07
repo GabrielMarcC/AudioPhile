@@ -52,19 +52,19 @@ export const Footer = () => {
                 home
               </Link>
               <Link
-                href="/"
+                href="/categories/headphones"
                 className="link link-hover hover:text-dark-orange p-2"
               >
                 headphones
               </Link>
               <Link
-                href="/"
+                href="/categories/speakers"
                 className="link link-hover hover:text-dark-orange p-2"
               >
                 speakers
               </Link>
               <Link
-                href="/"
+                href="/categories/earphones"
                 className="link link-hover hover:text-dark-orange p-2"
               >
                 earphones

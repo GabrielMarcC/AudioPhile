@@ -14,7 +14,7 @@ export const filterProducts = () => {
     return filteredProducts;
   };
 
-  const filterProductsByCategorys = async (
+  const filterProductsByCategories = async (
     category: string
   ): Promise<Products[]> => {
     const { data: categorys } = await supabase
@@ -27,5 +27,5 @@ export const filterProducts = () => {
     return filteredCategorys;
   };
 
-  return { filterProductsByIds, filterProductsByCategorys };
+  return { filterProductsByIds, filterProductsByCategories };
 };

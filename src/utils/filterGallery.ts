@@ -5,13 +5,13 @@ export const filterGallery = () => {
     const { data: gallery } = await supabase
       .from("gallery")
       .select("*")
-      .in("id", Ids);
+      .in("id_product", Ids);
 
     const filteredGallery = gallery as Gallery[];
     return filteredGallery;
   };
 
-  const filterGalleryByCategorys = async (
+  const filterGalleryByCategories = async (
     category: string
   ): Promise<Gallery[]> => {
     const { data: gallery } = await supabase
@@ -22,5 +22,5 @@ export const filterGallery = () => {
     const filteredGallery = gallery as Gallery[];
     return filteredGallery;
   };
-  return { filterGalleryByIds, filterGalleryByCategorys };
+  return { filterGalleryByIds, filterGalleryByCategories };
 };

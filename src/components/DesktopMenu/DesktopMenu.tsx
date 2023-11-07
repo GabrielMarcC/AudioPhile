@@ -9,17 +9,17 @@ export const DesktopMenu = () => {
         </Link>
       </div>
       <div>
-        <Link className="hover:text-dark-orange" href="/">
+        <Link className="hover:text-dark-orange" href="/categorys/headphones">
           headphones
         </Link>
       </div>
       <div>
-        <Link className="hover:text-dark-orange" href="/">
+        <Link className="hover:text-dark-orange" href="/categorys/speakers">
           speakers
         </Link>
       </div>
       <div>
-        <Link className="hover:text-dark-orange" href="/">
+        <Link className="hover:text-dark-orange" href="/categorys/earphones">
           earphones
         </Link>
       </div>

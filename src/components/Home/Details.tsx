@@ -8,7 +8,7 @@ export const Details = async () => {
   const { filterProductsByIds } = filterProducts();
   const { filterGalleryByIds } = filterGallery();
   const product = await filterProductsByIds([1, 5, 6]);
-  const gallery = await filterGalleryByIds([4, 5, 6]);
+  const gallery = await filterGalleryByIds([1, 2, 4]);
 
   return (
     <section className="w-full h-full flex flex-col items-center">
