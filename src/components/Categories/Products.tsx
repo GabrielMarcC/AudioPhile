@@ -4,23 +4,17 @@ import { SeeProductBtn } from "../Home/ui/SeeProductBtn";
 import Link from "next/link";
 
 type Props = {
-  data: Products[];
-  dataImg: Gallery[];
+  product: Products[];
 };
 
-export const Products = ({ data, dataImg }: Props) => {
-  const changeOrder = [...data].sort(function (a, b) {
+export const Products = ({ product }: Props) => {
+  const changeOrder = [...product].sort(function (a, b) {
     return a.id - b.id;
   });
 
   return (
     <div className="flex flex-col justify-center items-center">
       {changeOrder.map((products, index) => {
-        const verifiedCategory = products.category === "speakers";
-        const changeOrder = verifiedCategory
-          ? dataImg.slice().reverse()
-          : dataImg;
-
         return (
           <div
             key={products.id}
@@ -30,7 +24,7 @@ export const Products = ({ data, dataImg }: Props) => {
           >
             <div className="flex justify-center items-center md:w-[690px] md:h-[350px] lg:w-[540px] lg:h-[560px] rounded-lg bg-light-gray">
               <Image
-                src={changeOrder[index].img_product}
+                src={products.img_product}
                 alt={products.name}
                 width={300}
                 height={300}

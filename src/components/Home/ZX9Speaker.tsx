@@ -4,17 +4,16 @@ import { SeeProductBtn } from "./ui/SeeProductBtn";
 
 type Props = {
   product: Products;
-  gallery: Gallery;
 };
 
-export const ZX9Speaker = async ({ product, gallery }: Props) => {
+export const ZX9Speaker = async ({ product }: Props) => {
   return (
     <div className="w-[327px] h-[600px] md:w-[680px] md:h-[720px] lg:w-[1110px] lg:h-[560px] rounded-lg bg-dark-orange flex  flex-col md:items-center relative">
       <div className="w-full h-full lg:bg-bg-zx9 bg-no-repeat md:bg-bg-zx9-mobile absolute  z-10"></div>
       <div className="w-full h-full flex flex-col lg:flex-row justify-center items-center z-20">
         <div className="flex items-center lg:items-end justify-center w-[270px] h-[300px] lg:h-full lg:w-[50%]">
           <Image
-            src={gallery.img_desktop}
+            src={product.img_desktop}
             alt={product.name}
             height={300}
             width={300}

@@ -6,16 +6,15 @@ import Link from "next/link";
 
 type Props = {
   product: Products;
-  gallery: Gallery;
 };
 
-export const YX1Earphones = async ({ product, gallery }: Props) => {
+export const YX1Earphones = async ({ product }: Props) => {
   return (
     <div className="w-full h-full flex flex-col items-center justify-center mt-6">
       <div className="flex flex-col md:flex-row md:gap-[2.75rem] w-full justify-center items-center">
         <Card margin="mt-[30px]" width="w-[540px]" height="w-[280px]">
           <Image
-            src={gallery.img_2}
+            src={product.img_2}
             alt={product.name}
             width={320}
             height={100}

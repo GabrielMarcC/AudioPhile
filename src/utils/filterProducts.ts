@@ -27,5 +27,20 @@ export const filterProducts = () => {
     return filteredCategorys;
   };
 
-  return { filterProductsByIds, filterProductsByCategories };
+  const filterProductsByName = async (name: string): Promise<Products[]> => {
+    const { data: names } = await supabase
+      .from("products")
+      .select("*")
+      .eq("name", name);
+
+    const filteredCategorys = names as Products[];
+
+    return filteredCategorys;
+  };
+
+  return {
+    filterProductsByIds,
+    filterProductsByCategories,
+    filterProductsByName,
+  };
 };

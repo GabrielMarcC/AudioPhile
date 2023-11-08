@@ -1,18 +1,20 @@
 import { ArrowIcon } from "@/icons/arrow-icon";
 import Image from "next/image";
 import Link from "next/link";
-import { filterGallery } from "@/utils/filterGallery";
+import { filterProducts } from "@/utils/filterProducts";
 
 export const CategoriesLinks = async () => {
-  const { filterGalleryByIds } = filterGallery();
-  const data = await filterGalleryByIds([1, 4, 6]);
-  const changerOrder = [...data].reverse();
+  const { filterProductsByIds } = filterProducts();
+  const data = await filterProductsByIds([5, 3, 1]);
 
-  return changerOrder.map((items) => {
+  let copyData = [...data];
+  copyData = [copyData[1], copyData[2], copyData[0]];
+
+  return copyData.map((items) => {
     return (
       <div
         className="flex flex-col pt-16 md:pt-0 items-center  md:flex-row md:justify-center md:gap-2 lg:gap-8 "
-        key={items.id_product}
+        key={items.id}
       >
         <div className="flex flex-col w-[327px] lg:w-[350px]  md:w-[240px] h-[165px] items-center justify-center  bg-light-gray rounded-lg relative">
           <div className={`flex items-start justify-center`}>

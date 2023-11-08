@@ -9,58 +9,19 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
-      gallery: {
-        Row: {
-          id_product: number;
-          img_1: string;
-          img_2: string;
-          img_3: string;
-          img_home: string;
-          img_product: string;
-          img_tablet: string;
-          img_desktop: string;
-          name: string;
-          category: string;
-        };
-        Insert: {
-          id_product?: number;
-          img_1?: string;
-          img_2?: string;
-          img_3?: string;
-          img_home: string;
-          img_product?: string;
-          name?: string;
-          category?: string;
-          img_tablet?: string;
-          img_desktop: string;
-        };
-        Update: {
-          id_product?: number;
-          img_1?: string;
-          img_2?: string;
-          img_3?: string;
-          img_home?: string;
-          img_product?: string;
-          name?: string;
-          category?: string;
-          img_tablet?: string;
-          img_desktop: string;
-        };
-        Relationships: [
-          {
-            foreignKeyName: "gallery_id_product_fkey";
-            columns: ["id_product"];
-            referencedRelation: "products";
-            referencedColumns: ["id"];
-          }
-        ];
-      };
       products: {
         Row: {
           category: string;
           description: string;
           features: string;
           id: number;
+          img_1: string;
+          img_2: string;
+          img_3: string;
+          img_desktop: string;
+          img_home: string;
+          img_product: string;
+          img_tablet: string;
           includes: Json;
           name: string;
           new: boolean;
@@ -71,6 +32,13 @@ export interface Database {
           description?: string | null;
           features?: string | null;
           id?: number;
+          img_1?: string | null;
+          img_2?: string | null;
+          img_3?: string | null;
+          img_desktop?: string | null;
+          img_home?: string | null;
+          img_product?: string | null;
+          img_tablet?: string | null;
           includes?: Json | null;
           name?: string | null;
           new?: boolean | null;
@@ -81,6 +49,13 @@ export interface Database {
           description?: string | null;
           features?: string | null;
           id?: number;
+          img_1?: string | null;
+          img_2?: string | null;
+          img_3?: string | null;
+          img_desktop?: string | null;
+          img_home?: string | null;
+          img_product?: string | null;
+          img_tablet?: string | null;
           includes?: Json | null;
           name?: string | null;
           new?: boolean | null;

@@ -6,15 +6,14 @@ import { Card } from "./ui/Card";
 
 type Props = {
   product: Products;
-  gallery: Gallery;
 };
 
-export const ZX7Speaker = async ({ product, gallery }: Props) => {
+export const ZX7Speaker = async ({ product }: Props) => {
   return (
     <Card height="h-[320px]" position="relative" margin="mt-[47px]">
       <div className="w-[320px] h-[320px] custom:hidden">
         <Image
-          src={gallery.img_3}
+          src={product.img_3}
           alt={product.name}
           width={320}
           height={320}
@@ -23,7 +22,7 @@ export const ZX7Speaker = async ({ product, gallery }: Props) => {
       </div>
       <div className="md:w-[680px] md:h-[320px] lg:hidden mobile:hidden">
         <Image
-          src={gallery.img_tablet}
+          src={product.img_tablet}
           alt={product.name}
           width={680}
           height={320}
@@ -32,7 +31,7 @@ export const ZX7Speaker = async ({ product, gallery }: Props) => {
       </div>
       <div className="desktop:w-[1110px] desktop:h-[320px] tablet:hidden mobile:hidden">
         <Image
-          src={gallery.img_desktop}
+          src={product.img_desktop}
           alt={product.name}
           width={1110}
           height={600}

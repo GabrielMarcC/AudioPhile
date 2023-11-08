@@ -2,12 +2,12 @@ import { ReactNode } from "react";
 import { Metadata } from "next";
 
 type Props = {
-  params: { id: string };
+  params: { name: string };
 };
 
 export const generateMetadata = ({ params }: Props): Metadata => {
   return {
-    title: `Product - ${params.id}`,
+    title: `Product - ${params.name}`,
     description: "product details",
   };
 };
