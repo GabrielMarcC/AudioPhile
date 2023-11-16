@@ -36,7 +36,7 @@ export const YX1Earphones = async ({ product }: Props) => {
               border="border-black"
               hover="lg:hover:bg-black lg:hover:text-white"
             >
-              <Link href="/">see product</Link>
+              <Link href={`/details/${product.id}`}>see product</Link>
             </SeeProductBtn>
           </div>
         </Card>
