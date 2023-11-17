@@ -50,9 +50,7 @@ export const ProductDetails = ({ product }: Props) => {
               {product.description}
             </p>
             <span className="py-6 text-black font-bold tracking-[1.28px] uppercase text-[18px]">
-              {product.price >= 1000
-                ? formatter.format(product.price)
-                : product.price}
+              {formatter.format(product.price)}
             </span>
             <div className="flex items-center gap-4 pt-[30px]">
               <div className="flex justify-center items-center w-[120px] h-[48px] bg-light-gray">
