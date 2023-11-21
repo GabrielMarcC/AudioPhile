@@ -28,7 +28,11 @@ export const YX1Earphones = async ({ product }: Props) => {
           height="h-[280px]"
         >
           <div className=" flex flex-col w-full h-full justify-center items-start pl-[25px]">
-            <Title label={`${product.name}`} textColor="text-black" />
+            <Title
+              label={`${product.name}`}
+              textColor="text-black"
+              size="md:text-[22px]"
+            />
             <SeeProductBtn
               bgcolor="bg-none"
               textColor="text-black"

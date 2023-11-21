@@ -16,7 +16,7 @@ export const CategoriesLinks = async () => {
         className="flex flex-col pt-16 md:pt-0 items-center  md:flex-row md:justify-center md:gap-2 lg:gap-8 "
         key={items.id}
       >
-        <div className="flex flex-col w-[327px] lg:w-[350px]  md:w-[240px] h-[165px] items-center justify-center  bg-light-gray rounded-lg relative">
+        <div className="flex flex-col w-[327px] lg:w-[350px]  md:w-[222px] h-[165px] items-center justify-center  bg-light-gray rounded-lg relative">
           <div className={`flex items-start justify-center`}>
             <Image
               src={items.img_home}

@@ -37,7 +37,7 @@ export const Menu = ({ bg, category }: MenuProps) => {
       <div className="w-full md:ml-10 lg:ml-[4.5rem] xl:ml-24 md:w-[90%] h-[1px] bg-white opacity-20 flex justify-center items-center"></div>
       {category && (
         <div className="w-full h-auto bg-black flex items-center justify-center p-8 md:px-[277px] md:pt-[195px] md:pb-[95px]">
-          <Title label={`${category}`} size="lg:text-[40px]" />
+          <Title label={`${category}`} size=" md:text-[40px] lg:text-[40px]" />
         </div>
       )}
     </div>

@@ -39,7 +39,11 @@ export const ZX7Speaker = async ({ product }: Props) => {
         />
       </div>
       <div className="absolute top-[5rem] md:top-[7rem] left-[16px] md:left-[43px] flex flex-col">
-        <Title label="zx7 speakers" textColor="text-black" />
+        <Title
+          label="zx7 speakers"
+          textColor="text-black"
+          size="md:text-[22px]"
+        />
         <SeeProductBtn
           bgcolor="bg-none"
           margin="mt-[32px]"

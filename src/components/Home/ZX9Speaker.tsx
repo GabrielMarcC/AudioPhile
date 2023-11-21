@@ -17,15 +17,15 @@ export const ZX9Speaker = async ({ product }: Props) => {
             alt={product.name}
             height={300}
             width={300}
-            className="md:h-[320px] lg:h-[410px]"
+            className="w-[200px] md:w-[300px] md:h-[320px] lg:h-[410px] lg:w-[350px]"
           />
         </div>
         <div className="lg:w-[50%] flex flex-col justify-center items-center lg:items-start lg:pl-36 md:pt-4">
-          <h2 className="flex  w-[80%] md:w-[50%] text-[40px] md:text-[56px] md:tracking-[2px] md:leading-[58px] lg:text-left font-bold leading-[40px] tracking-[1.286px] uppercase text-center text-white">
+          <h2 className="flex  w-[80%] md:w-[50%] text-[40px] md:text-[56px] md:tracking-[2px] md:leading-[58px] lg:text-left font-bold leading-[40px] tracking-[1.286px] uppercase text-center text-white md:py-2">
             {product.name}
           </h2>
           <div className="md:w-[60%] lg:w-full">
-            <p className="text-white text-[15px] font-medium leading-6 opacity-75 p-6 text-center lg:pl-0 lg:text-left">
+            <p className="text-white text-[15px] font-medium leading-6 opacity-75 px-2  py-4 md:px-6 md:py-6 text-center lg:pl-0 lg:text-left">
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>

@@ -7,7 +7,7 @@ type Props = {
 
 export const generateMetadata = ({ params }: Props): Metadata => {
   return {
-    title: `Product - ${params.id}`,
+    title: `Product  ${params.id}`,
     description: "product details",
   };
 };
