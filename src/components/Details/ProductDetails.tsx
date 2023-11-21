@@ -17,7 +17,7 @@ export const ProductDetails = ({ product }: Props) => {
   return (
     <>
       <div className="flex justify-center items-center flex-col w-[100%]   lg:px-0 md:pt-[32px]">
-        <div className="flex flex-col justify-center w-[85%] lg:w-[1110px] items-center md:flex-row md:justify-center lg:gap-[125px]">
+        <div className="flex flex-col justify-center w-[80%] lg:w-[1110px] items-center md:flex-row md:justify-center lg:gap-[125px]">
           <div className="flex flex-col md:w-[50%] lg:w-[1110px]">
             <div className="text-black text-[15px] font-medium leading-[25px] opacity-50 flex items-start justify-start">
               <Link href={"/"} className="py-[16px] lg:pb-[56px] lg:pt-[69px]">
@@ -68,7 +68,7 @@ export const ProductDetails = ({ product }: Props) => {
             </div>
           </div>
         </div>
-        <div className="pt-[100px]  flex flex-col lg:justify-between lg:items-center lg:flex-row w-[85%] lg:w-[1110px]  lg:gap-3">
+        <div className="pt-[100px]  flex flex-col lg:justify-between lg:items-center lg:flex-row w-[80%] lg:w-[1110px]  lg:gap-3">
           <div className="lg:w-[50%]">
             <div className="flex flex-col items-start justify-center lg:w-[100%]">
               <Title
