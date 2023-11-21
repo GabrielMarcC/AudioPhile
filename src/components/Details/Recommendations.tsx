@@ -43,7 +43,10 @@ export const Recommendations = async ({ id }: Props) => {
                 size="text-[24px]"
                 padding="py-[32px]"
               />
-              <SeeProductBtn bgcolor="bg-dark-orange">
+              <SeeProductBtn
+                bgcolor="bg-dark-orange"
+                hover="lg:hover:bg-[#FBAF85]"
+              >
                 <Link href={`/details/${products.id}`}>see product</Link>
               </SeeProductBtn>
             </div>
