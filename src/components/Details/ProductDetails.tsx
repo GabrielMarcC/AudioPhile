@@ -1,19 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Title } from "../Home/ui/Title";
 import { Gallery } from "./Gallery";
+import { useCartFunctions } from "../hooks/useCartFunctions";
 import { Items } from "./Items";
+import { CartBtn } from "../Cart/CartBtn";
+import { formatPrice } from "@/utils/formatPrice";
 
 type Props = {
   product: Products;
 };
 
-const formatter = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-});
-
 export const ProductDetails = ({ product }: Props) => {
+  const { addItems } = useCartFunctions();
+  const format = formatPrice(product.price);
   return (
     <>
       <div className="flex justify-center items-center flex-col w-[100%]   lg:px-0 md:pt-[32px]">
@@ -52,16 +54,15 @@ export const ProductDetails = ({ product }: Props) => {
               {product.description}
             </p>
             <span className="py-6 text-black font-bold tracking-[1.28px] uppercase text-[18px]">
-              {formatter.format(product.price)}
+              {format}
             </span>
             <div className="flex items-center gap-4 pt-[30px]">
-              <div className="flex justify-center items-center w-[120px] h-[48px] bg-light-gray">
-                <button className="">-</button>
-                <div className="px-5">0</div>
-                <button className="">+</button>
-              </div>
+              <CartBtn />
               <div className="w-[160px] h-[48px] flex items-center justify-center">
-                <button className="bg-dark-orange text-white uppercase w-full h-full font-bold text-[13px]">
+                <button
+                  className="bg-dark-orange text-white uppercase w-full h-full font-bold text-[13px]"
+                  onClick={() => addItems(product)}
+                >
                   add to cart
                 </button>
               </div>
