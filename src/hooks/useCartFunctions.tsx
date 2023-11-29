@@ -1,9 +1,16 @@
-import { useCart } from "@/components/Context/store";
+import { useCart } from "@/Context/store";
 
 type Items = Pick<Products, "id" | "name" | "price" | "img_product">;
 
 export const useCartFunctions = () => {
-  const { addItem, quantityItems, setQuantityItems, cartItems } = useCart();
+  const {
+    addItem,
+    quantityItems,
+    setQuantityItems,
+    clearCart,
+    incrementItem,
+    decrementItem,
+  } = useCart();
 
   const addItems = (item: Items) => {
     addItem({
@@ -15,17 +22,21 @@ export const useCartFunctions = () => {
     });
   };
 
-  console.log(cartItems);
-
   const increment = () => {
+    incrementItem();
     setQuantityItems(quantityItems + 1);
   };
 
   const decrement = () => {
     if (quantityItems > 0) {
+      decrementItem();
       setQuantityItems(quantityItems - 1);
     }
   };
 
-  return { addItems, increment, decrement, quantityItems };
+  const clearAll = () => {
+    clearCart();
+  };
+
+  return { addItems, clearAll, quantityItems, increment, decrement };
 };

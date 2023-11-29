@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Title } from "../Home/ui/Title";
 import { Gallery } from "./Gallery";
-import { useCartFunctions } from "../hooks/useCartFunctions";
+import { useCartFunctions } from "../../hooks/useCartFunctions";
 import { Items } from "./Items";
 import { CartBtn } from "../Cart/CartBtn";
 import { formatPrice } from "@/utils/formatPrice";

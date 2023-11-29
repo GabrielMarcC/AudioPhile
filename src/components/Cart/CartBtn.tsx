@@ -1,20 +1,32 @@
 "use client";
 
-import { useCartFunctions } from "../hooks/useCartFunctions";
+import { useCart } from "@/Context/store";
+import { useCartFunctions } from "../../hooks/useCartFunctions";
 
 type Props = {
+  id?: number;
   quantity?: number;
 };
 
-export const CartBtn = ({ quantity }: Props) => {
-  const { quantityItems, decrement, increment } = useCartFunctions();
+export const CartBtn = ({ id, quantity }: Props) => {
+  const { quantityItems, increment, decrement } = useCartFunctions();
+  const { incrementItem, decrementItem } = useCart();
+
   return (
-    <div className="flex justify-center items-center w-[120px] h-[48px] bg-light-gray">
-      <button onClick={decrement}>-</button>
-      <div className="px-5 text-black uppercase">
-        {quantity ? quantity : quantityItems}
-      </div>
-      <button onClick={increment}>+</button>
+    <div>
+      {id ? (
+        <div className="flex justify-center items-center w-[120px] h-[48px] bg-light-gray">
+          <button onClick={() => decrementItem(id)}>-</button>
+          <div className="px-5 text-black uppercase">{quantity}</div>
+          <button onClick={() => incrementItem(id)}>+</button>
+        </div>
+      ) : (
+        <div className="flex justify-center items-center w-[120px] h-[48px] bg-light-gray">
+          <button onClick={() => decrement()}>-</button>
+          <div className="px-5 text-black uppercase">{quantityItems}</div>
+          <button onClick={() => increment()}>+</button>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useCart } from "../Context/store";
+import { useCart } from "../../Context/store";
 import { CartBtn } from "./CartBtn";
 import { formatPrice } from "@/utils/formatPrice";
 
@@ -8,7 +8,7 @@ export const CartProducts = () => {
 
   return (
     <div>
-      {cartItems.length > 0 ? (
+      {cartItems !== null ? (
         <div>
           {cartItems.map((items) => {
             const formatedPrice = formatPrice(items.price);
@@ -35,7 +35,7 @@ export const CartProducts = () => {
                     </span>
                   </div>
                 </div>
-                <CartBtn quantity={items.quantity} />
+                <CartBtn id={items.id} quantity={items.quantity} />
               </div>
             );
           })}

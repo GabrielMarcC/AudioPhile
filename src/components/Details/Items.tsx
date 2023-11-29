@@ -1,5 +1,4 @@
 import { Title } from "../Home/ui/Title";
-import Image from "next/image";
 
 type Props = {
   product: Products;

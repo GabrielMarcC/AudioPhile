@@ -24,6 +24,8 @@ type CartContextType = {
   clearCart: () => void;
   quantityItems: number;
   setQuantityItems: Dispatch<SetStateAction<number>>;
+  incrementItem: (itemId?: number) => void;
+  decrementItem: (itemId?: number) => void;
 };
 
 interface CartProviderProps {
@@ -40,10 +42,12 @@ const CartContext = createContext<CartContextType>({
       product_img: "",
     },
   ],
-  addItem: (item: CartItem) => {},
+  addItem: () => {},
   clearCart: () => {},
-  quantityItems: 0,
   setQuantityItems: () => {},
+  incrementItem: () => {},
+  decrementItem: () => {},
+  quantityItems: 0,
 });
 
 export const CartProvider: FC<CartProviderProps> = ({ children }) => {
@@ -51,7 +55,32 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
   const [quantityItems, setQuantityItems] = useState<number>(0);
 
   const addItem = (item: CartItem) => {
-    setCartItems((prevItems) => [...prevItems, item]);
+    const itemExists = cartItems.some(
+      (existingItem) => existingItem.id === item.id
+    );
+    if (!itemExists) {
+      setCartItems((prevItems) => [...prevItems, item]);
+    }
+
+    setQuantityItems(0);
+  };
+
+  const incrementItem = (itemId?: number) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  const decrementItem = (itemId?: number) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === itemId && item.quantity > 0
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+    );
   };
 
   const clearCart = () => {
@@ -66,6 +95,8 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
         clearCart,
         quantityItems,
         setQuantityItems,
+        incrementItem,
+        decrementItem,
       }}
     >
       {children}

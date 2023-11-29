@@ -2,14 +2,16 @@
 
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { CartProducts } from "./CartProducts";
-import { useCartFunctions } from "../hooks/useCartFunctions";
+import { useCart } from "../../Context/store";
+import { useCartFunctions } from "../../hooks/useCartFunctions";
 
 export const Cart = () => {
-  const { quantityItems } = useCartFunctions();
+  const { cartItems } = useCart();
+  const { clearAll } = useCartFunctions();
 
   return (
-    <div className="w-full cursor-pointer">
-      <label htmlFor="my_modal">
+    <div className="w-full">
+      <label htmlFor="my_modal" className="cursor-pointer">
         <AiOutlineShoppingCart color="#ffffff" size="20px" />
       </label>
       <input type="checkbox" id="my_modal" className="modal-toggle" />
@@ -17,11 +19,14 @@ export const Cart = () => {
         <div className="modal-box w-[327px] h-[488px]">
           <div className="flex justify-between items-center pt-8">
             <span className="text-black text-[18px] font-bold uppercase">
-              Cart ({quantityItems})
+              Cart ({cartItems.length})
             </span>
-            <span className="font-medium text-[15px] underline opacity-50 text-black">
+            <button
+              className="font-medium text-[15px] underline opacity-50 text-black"
+              onClick={clearAll}
+            >
               Remove all
-            </span>
+            </button>
           </div>
           <CartProducts />
         </div>
