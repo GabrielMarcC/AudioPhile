@@ -10,6 +10,7 @@ export const useCartFunctions = () => {
     clearCart,
     incrementItem,
     decrementItem,
+    totalItems,
   } = useCart();
 
   const addItems = (item: Items) => {
@@ -19,6 +20,7 @@ export const useCartFunctions = () => {
       price: item.price,
       quantity: quantityItems,
       product_img: item.img_product,
+      total: totalItems,
     });
   };
 

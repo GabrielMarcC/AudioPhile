@@ -1,15 +1,7 @@
 "use client";
 
 import { CartContextType, CartItem } from "@/types";
-import {
-  ReactNode,
-  createContext,
-  useContext,
-  useState,
-  FC,
-  Dispatch,
-  SetStateAction,
-} from "react";
+import { ReactNode, createContext, useContext, useState, FC } from "react";
 
 interface CartProviderProps {
   children: ReactNode;
