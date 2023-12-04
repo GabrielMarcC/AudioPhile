@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Title } from "../Home/ui/Title";
 import { Gallery } from "./Gallery";
 import { useCartFunctions } from "../../hooks/useCartFunctions";
 import { Items } from "./Items";
 import { CartBtn } from "../Cart/CartBtn";
 import { formatPrice } from "@/utils/formatPrice";
+import { useRouter } from "next/navigation";
 
 type Props = {
   product: Products;
@@ -15,6 +15,7 @@ type Props = {
 
 export const ProductDetails = ({ product }: Props) => {
   const { addItems } = useCartFunctions();
+  const router = useRouter();
   const format = formatPrice(product.price);
   return (
     <>
@@ -22,9 +23,12 @@ export const ProductDetails = ({ product }: Props) => {
         <div className="flex flex-col justify-center w-[80%] lg:w-[1110px] items-center md:flex-row md:justify-center lg:gap-[125px]">
           <div className="flex flex-col md:w-[50%] lg:w-[1110px]">
             <div className="text-black text-[15px] font-medium leading-[25px] opacity-50 flex items-start justify-start">
-              <Link href={"/"} className="py-[16px] lg:pb-[56px] lg:pt-[69px]">
+              <button
+                onClick={() => router.back()}
+                className="py-[16px] lg:pb-[56px] lg:pt-[69px]"
+              >
                 Go Back
-              </Link>
+              </button>
             </div>
             <div className="w-[327px] h-[327px] flex items-center justify-center md:w-[280px] md:h-[480px] lg:w-[540px] lg:h-[560px] bg-light-gray rounded-md">
               <Image

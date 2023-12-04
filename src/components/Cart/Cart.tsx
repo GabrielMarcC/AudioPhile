@@ -9,6 +9,8 @@ export const Cart = () => {
   const { cartItems } = useCart();
   const { clearAll } = useCartFunctions();
 
+  
+
   return (
     <div className="w-full">
       <label htmlFor="my_modal" className="cursor-pointer">

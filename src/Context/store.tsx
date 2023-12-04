@@ -1,5 +1,6 @@
 "use client";
 
+import { CartContextType, CartItem } from "@/types";
 import {
   ReactNode,
   createContext,
@@ -9,24 +10,6 @@ import {
   Dispatch,
   SetStateAction,
 } from "react";
-
-type CartItem = {
-  id: number;
-  quantity: number;
-  price: number;
-  name: string;
-  product_img: string;
-};
-
-type CartContextType = {
-  cartItems: CartItem[];
-  addItem: (item: CartItem) => void;
-  clearCart: () => void;
-  quantityItems: number;
-  setQuantityItems: Dispatch<SetStateAction<number>>;
-  incrementItem: (itemId?: number) => void;
-  decrementItem: (itemId?: number) => void;
-};
 
 interface CartProviderProps {
   children: ReactNode;
@@ -40,19 +23,23 @@ const CartContext = createContext<CartContextType>({
       price: 0,
       quantity: 0,
       product_img: "",
+      total: 0,
     },
   ],
   addItem: () => {},
   clearCart: () => {},
   setQuantityItems: () => {},
+  setTotalItems: () => {},
   incrementItem: () => {},
   decrementItem: () => {},
   quantityItems: 0,
+  totalItems: 0,
 });
 
 export const CartProvider: FC<CartProviderProps> = ({ children }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [quantityItems, setQuantityItems] = useState<number>(0);
+  const [totalItems, setTotalItems] = useState<number>(0);
 
   const addItem = (item: CartItem) => {
     const itemExists = cartItems.some(
@@ -60,6 +47,7 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
     );
     if (!itemExists) {
       setCartItems((prevItems) => [...prevItems, item]);
+      localStorage.setItem("item", JSON.stringify(item));
     }
 
     setQuantityItems(0);
@@ -68,7 +56,13 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
   const incrementItem = (itemId?: number) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
-        item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
+        item.id === itemId
+          ? {
+              ...item,
+              quantity: item.quantity + 1,
+              total: item.quantity > 0 ? item.quantity * item.price : 0,
+            }
+          : item
       )
     );
   };
@@ -77,7 +71,11 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
         item.id === itemId && item.quantity > 0
-          ? { ...item, quantity: item.quantity - 1 }
+          ? {
+              ...item,
+              quantity: item.quantity - 1,
+              total: item.quantity > 0 ? item.quantity * item.price : 0,
+            }
           : item
       )
     );
@@ -91,10 +89,12 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
     <CartContext.Provider
       value={{
         cartItems,
+        quantityItems,
+        totalItems,
         addItem,
         clearCart,
-        quantityItems,
         setQuantityItems,
+        setTotalItems,
         incrementItem,
         decrementItem,
       }}
