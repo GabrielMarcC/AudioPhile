@@ -16,7 +16,7 @@ export const Cart = () => {
       </label>
       <input type="checkbox" id="my_modal" className="modal-toggle" />
       <div className="modal" role="dialog">
-        <div className="modal-box w-[327px] h-[488px] bg-white">
+        <div className="rounded-md p-6 absolute top-40 w-[327px] h-[488px] bg-white  modal-middle overflow-x-auto md:right-28 lg:right-32 xl:right-60">
           <div className="flex justify-between items-center pt-8">
             <span className="text-black text-[18px] font-bold uppercase">
               Cart ({cartItems.length})

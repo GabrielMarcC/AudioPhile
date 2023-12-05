@@ -42,11 +42,13 @@ export const CartProducts = () => {
             );
           })}
           <div className="flex flex-col w-full">
-            <div className="w-full flex justify-between py-6">
+            <div className="w-full flex justify-between items-center py-6">
               <span className="text-[15px] uppercase font-medium  opacity-50">
                 total
               </span>
-              <span>{formatPrice(totalItems)}</span>
+              <span className="text-[18px] font-bold text-center tracking-normal">
+                {formatPrice(totalItems)}
+              </span>
             </div>
             <button className="text-white bg-dark-orange text-[13px] font-bold uppercase h-12">
               checkout

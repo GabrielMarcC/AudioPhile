@@ -22,7 +22,7 @@ export const Recommendations = async ({ id }: Props) => {
         size="text-[24px] md:text-[32px]"
         padding="pb-[40px] pt-[40px]"
       />
-      <div className="flex flex-col items-center justify-center gap-[20px] md:flex-row">
+      <div className="flex flex-col items-center justify-center gap-[30px] md:gap-3 md:flex-row">
         {recommendations.map((products) => {
           return (
             <div
