@@ -2,10 +2,9 @@ import Image from "next/image";
 import { useCart } from "../../Context/store";
 import { CartBtn } from "./CartBtn";
 import { formatPrice } from "@/utils/formatPrice";
-import { CartItem } from "@/types";
 
 export const CartProducts = () => {
-  const { cartItems, totalItems, setTotalItems } = useCart();
+  const { cartItems, totalItems } = useCart();
 
   return (
     <div>
@@ -13,12 +12,6 @@ export const CartProducts = () => {
         <div>
           {cartItems.map((items) => {
             const formatedPrice = formatPrice(items.price);
-            function calculate(total: number, items: CartItem): number {
-              return total + items.total * cartItems.length;
-            }
-
-            const total: number = cartItems.reduce(calculate, 0);
-            setTotalItems(total);
             return (
               <div
                 key={items.id}
@@ -53,7 +46,7 @@ export const CartProducts = () => {
               <span className="text-[15px] uppercase font-medium  opacity-50">
                 total
               </span>
-              <span>{totalItems > 0 ? formatPrice(totalItems) : 0}</span>
+              <span>{formatPrice(totalItems)}</span>
             </div>
             <button className="text-white bg-dark-orange text-[13px] font-bold uppercase h-12">
               checkout

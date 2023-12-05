@@ -1,4 +1,6 @@
 import { useCart } from "@/Context/store";
+import { Items } from "@/components/Details/Items";
+import { useEffect } from "react";
 
 type Items = Pick<Products, "id" | "name" | "price" | "img_product">;
 
@@ -6,12 +8,22 @@ export const useCartFunctions = () => {
   const {
     addItem,
     quantityItems,
+    cartItems,
+    setTotalItems,
     setQuantityItems,
     clearCart,
     incrementItem,
     decrementItem,
-    totalItems,
   } = useCart();
+
+  useEffect(() => {
+    let sumAllValues = cartItems.reduce(
+      (acc, currentValue) => acc + currentValue.total,
+      0
+    );
+
+    setTotalItems(sumAllValues);
+  }, [cartItems, setTotalItems]);
 
   const addItems = (item: Items) => {
     addItem({
@@ -20,7 +32,7 @@ export const useCartFunctions = () => {
       price: item.price,
       quantity: quantityItems,
       product_img: item.img_product,
-      total: totalItems,
+      total: quantityItems * item.price,
     });
   };
 
@@ -40,5 +52,11 @@ export const useCartFunctions = () => {
     clearCart();
   };
 
-  return { addItems, clearAll, quantityItems, increment, decrement };
+  return {
+    addItems,
+    clearAll,
+    increment,
+    decrement,
+    quantityItems,
+  };
 };

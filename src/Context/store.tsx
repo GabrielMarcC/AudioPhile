@@ -1,7 +1,14 @@
 "use client";
 
 import { CartContextType, CartItem } from "@/types";
-import { ReactNode, createContext, useContext, useState, FC } from "react";
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useState,
+  FC,
+  useEffect,
+} from "react";
 
 interface CartProviderProps {
   children: ReactNode;
@@ -39,7 +46,6 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
     );
     if (!itemExists) {
       setCartItems((prevItems) => [...prevItems, item]);
-      localStorage.setItem("item", JSON.stringify(item));
     }
 
     setQuantityItems(0);
@@ -52,7 +58,7 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
           ? {
               ...item,
               quantity: item.quantity + 1,
-              total: item.quantity > 0 ? item.quantity * item.price : 0,
+              total: (item.quantity + 1) * item.price,
             }
           : item
       )
@@ -66,15 +72,20 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
           ? {
               ...item,
               quantity: item.quantity - 1,
-              total: item.quantity > 0 ? item.quantity * item.price : 0,
+              total: (item.quantity - 1) * item.price,
             }
-          : item
+          : {
+              ...item,
+              quantity: 0,
+              total: 0,
+            }
       )
     );
   };
 
   const clearCart = () => {
     setCartItems([]);
+    setTotalItems(0);
   };
 
   return (
