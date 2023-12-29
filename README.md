@@ -47,10 +47,6 @@ Link do desafio: [Frontend Mentor](https://www.frontendmentor.io/challenges/audi
 &nbsp;&nbsp;&nbsp;Enfrentei diversos desafios durante o desenvolvimento, recebi um figma com várias telas, tamanhos diferentes, cores e estados de foco dos elementos.
 
 &nbsp;&nbsp;&nbsp;No início do projeto precisei pensar como organizar o fluxo da página, para melhor experiência de navegação, e  como organizar todos os dados (imagens e textos) dentro de um banco de dados de forma estruturada, testei de primeira o firebase, porém ao fazer deploy não obtive sucesso e então procurei por outra solução e encontrei o supabase, nele foi possível estruturar toda a lógica de armazenamento dos dados e comunicação com o frontend.
-## Demonstração
-
-[Audiophile](https://audio-phile-git-main-gabrielmarcc.vercel.app/)
-
 
 ## Screenshots
 
@@ -60,6 +56,9 @@ Link do desafio: [Frontend Mentor](https://www.frontendmentor.io/challenges/audi
 
 ![cart](https://res.cloudinary.com/dduiscoif/image/upload/v1703879239/screenshots/cart_laswyw.png)
 
+## Deploy
+
+[Audiophile](https://audio-phile-git-main-gabrielmarcc.vercel.app/)
 
 ## Autor
 
